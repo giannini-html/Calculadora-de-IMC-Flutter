@@ -1,20 +1,17 @@
-import 'package:aula/constans.dart';
+import 'package:aula/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
-  final Widget child;
-  const CustomCard({
-    Key? key,
-    required this.child,
-  }) : super(key: key);
+  Widget child;
+  CustomCard({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(15),
+      margin: const EdgeInsets.all(15.0),
       decoration: BoxDecoration(
-        color: kInactiveCardColour,
-        borderRadius: BorderRadius.circular(10),
+        color: kActiveCardColour,
+        borderRadius: BorderRadius.circular(10.0),
       ),
       child: child,
     );

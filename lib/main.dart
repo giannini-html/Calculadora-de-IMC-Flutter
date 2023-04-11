@@ -1,27 +1,25 @@
-import 'package:aula/constans.dart';
+import 'package:aula/constants.dart';
 import 'package:aula/pages/calculadora_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const CalculadoraIMC());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class CalculadoraIMC extends StatelessWidget {
+  const CalculadoraIMC({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         primaryColor: kBackgroundColor,
         scaffoldBackgroundColor: kBackgroundColor,
-        appBarTheme: AppBarTheme().copyWith(
-          backgroundColor: kBackgroundColor,
-        ),
+        appBarTheme: const AppBarTheme()
+            .copyWith(backgroundColor: kBackgroundColor, centerTitle: true),
       ),
       home: CalculadoraPage(),
-      debugShowCheckedModeBanner: false,
     );
   }
 }

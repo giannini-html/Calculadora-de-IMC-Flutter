@@ -1,14 +1,12 @@
-import 'package:aula/constans.dart';
+import 'package:aula/constants.dart';
 import 'package:flutter/material.dart';
 
 class IconContent extends StatelessWidget {
-  final IconData iconData;
-  final String text;
-  const IconContent({
-    Key? key,
-    required this.iconData,
-    required this.text,
-  }) : super(key: key);
+  final IconData icon;
+  final String label;
+
+  const IconContent({Key? key, required this.icon, required this.label})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,16 +14,16 @@ class IconContent extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Icon(
-          iconData,
-          size: 80,
+          icon,
+          size: 80.0,
         ),
-        SizedBox(
-          height: 10,
+        const SizedBox(
+          height: 15.0,
         ),
         Text(
-          '$text',
+          label,
           style: kLabelTextStyle,
-        ),
+        )
       ],
     );
   }

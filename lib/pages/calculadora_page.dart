@@ -1,15 +1,19 @@
+
+import 'package:aula/components/bottom_button.dart';
 import 'package:aula/components/custom_card.dart';
 import 'package:aula/components/icon_content.dart';
-import 'package:aula/constans.dart';
+import 'package:aula/components/roundicon_button.dart';
+import 'package:aula/constants.dart';
 import 'package:flutter/material.dart';
+
+import '../components/slider_altura.dart';
 
 class CalculadoraPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Calculadora IMC"),
-        centerTitle: true,
+        title: const Text('Calculadora IMC'),
       ),
       body: Column(
         children: [
@@ -18,17 +22,17 @@ class CalculadoraPage extends StatelessWidget {
               children: [
                 Expanded(
                   child: CustomCard(
-                    child: IconContent(
-                      text: 'Masculino',
-                      iconData: Icons.male,
+                    child: const IconContent(
+                      icon: Icons.male,
+                      label: 'Masculino',
                     ),
                   ),
                 ),
                 Expanded(
                   child: CustomCard(
-                    child: IconContent(
-                      text: 'Feminino',
-                      iconData: Icons.female,
+                    child: const IconContent(
+                      icon: Icons.female,
+                      label: 'Feminino',
                     ),
                   ),
                 ),
@@ -37,38 +41,78 @@ class CalculadoraPage extends StatelessWidget {
           ),
           Expanded(
             child: CustomCard(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Altura',
-                    style: kLabelTextStyle,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        '1.83',
-                        style: kNumberTextStyle,
-                      ),
-                      Text('cm')
-                    ],
-                  ),
-                  Slider(
-                    value: 0,
-                    onChanged: (double value) {
-                      
-                    },
-                  )
-                ],
-              ),
+              child: SliderAltura(),
             ),
           ),
           Expanded(
-            child: CustomCard(
-              child: Placeholder(),
+            child: Row(
+              children: [
+                Expanded(
+                  child: CustomCard(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'IDADE',
+                          style: kLabelTextStyle,
+                        ),
+                        const Text(
+                          '0',
+                          style: kNumberTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            RoundIconButton(
+                              icon: Icons.add,
+                            ),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            RoundIconButton(
+                              icon: Icons.remove,
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: CustomCard(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'PESO',
+                          style: kLabelTextStyle,
+                        ),
+                        const Text(
+                          '0',
+                          style: kNumberTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            RoundIconButton(
+                              icon: Icons.add,
+                            ),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            RoundIconButton(
+                              icon: Icons.remove,
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
+          const BottomButton(buttonTitle: 'Calcular IMC')
         ],
       ),
     );
