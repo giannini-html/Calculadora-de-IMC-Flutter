@@ -2,7 +2,10 @@ import 'package:aula/constants.dart';
 import 'package:flutter/material.dart';
 
 class SliderAltura extends StatelessWidget {
-  const SliderAltura({super.key});
+    void Function(double) onChanged;
+    double altura;
+
+  SliderAltura({super.key, required this.onChanged, required this.altura});
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +20,9 @@ class SliderAltura extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.baseline,
           textBaseline: TextBaseline.alphabetic,
-          children: const <Widget>[
+          children: <Widget>[
             Text(
-              '1.84',
+              altura.toInt().toString(),
               style: kNumberTextStyle,
             ),
             Text(

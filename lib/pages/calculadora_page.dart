@@ -1,4 +1,3 @@
-
 import 'package:aula/components/bottom_button.dart';
 import 'package:aula/components/custom_card.dart';
 import 'package:aula/components/icon_content.dart';
@@ -8,7 +7,17 @@ import 'package:flutter/material.dart';
 
 import '../components/slider_altura.dart';
 
-class CalculadoraPage extends StatelessWidget {
+enum Genero { masculino, feminino }
+
+class CalculadoraPage extends StatefulWidget {
+  @override
+  State<CalculadoraPage> createState() => _CalculadoraPageState();
+}
+
+class _CalculadoraPageState extends State<CalculadoraPage> {
+  Genero? generoSelecionado;
+  double altura = 120;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,6 +31,14 @@ class CalculadoraPage extends StatelessWidget {
               children: [
                 Expanded(
                   child: CustomCard(
+                    onTap: () {
+                      setState(() {
+                        generoSelecionado = Genero.masculino;
+                      });
+                    },
+                    color: generoSelecionado == Genero.masculino
+                        ? kActiveCardColour
+                        : kInactiveCardColour,
                     child: const IconContent(
                       icon: Icons.male,
                       label: 'Masculino',
@@ -30,6 +47,14 @@ class CalculadoraPage extends StatelessWidget {
                 ),
                 Expanded(
                   child: CustomCard(
+                    onTap: () {
+                      setState(() {
+                        generoSelecionado = Genero.feminino;
+                      });
+                    },
+                    color: generoSelecionado == Genero.feminino
+                        ? kActiveCardColour
+                        : kInactiveCardColour,
                     child: const IconContent(
                       icon: Icons.female,
                       label: 'Feminino',
@@ -41,7 +66,15 @@ class CalculadoraPage extends StatelessWidget {
           ),
           Expanded(
             child: CustomCard(
-              child: SliderAltura(),
+              color: kActiveCardColour,
+              child: SliderAltura(
+                altura: altura,
+                onChanged: (double novaAltura) {
+                  setState(() {
+                    altura = novaAltura;
+                  });
+                },
+              ),
             ),
           ),
           Expanded(
@@ -49,6 +82,7 @@ class CalculadoraPage extends StatelessWidget {
               children: [
                 Expanded(
                   child: CustomCard(
+                    color: kActiveCardColour,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -80,6 +114,7 @@ class CalculadoraPage extends StatelessWidget {
                 ),
                 Expanded(
                   child: CustomCard(
+                    color: kActiveCardColour,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
