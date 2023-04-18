@@ -1,4 +1,4 @@
-import 'package:aula/constants.dart';
+import 'package:calculadora_imc/constants.dart';
 import 'package:flutter/material.dart';
 
 class ModalResult extends StatelessWidget {
