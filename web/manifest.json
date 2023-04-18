@@ -1,6 +1,6 @@
 {
-    "name": "aula",
-    "short_name": "aula",
+    "name": "calculadora_imc",
+    "short_name": "calculadora_imc",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

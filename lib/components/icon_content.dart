@@ -1,4 +1,4 @@
-import 'package:aula/constants.dart';
+import 'package:calculadora_imc/constants.dart';
 import 'package:flutter/material.dart';
 
 class IconContent extends StatelessWidget {
@@ -17,7 +17,7 @@ class IconContent extends StatelessWidget {
           icon,
           size: 80.0,
         ),
-        const SizedBox(
+        SizedBox(
           height: 15.0,
         ),
         Text(

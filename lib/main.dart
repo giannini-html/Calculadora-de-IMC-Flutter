@@ -1,5 +1,5 @@
-import 'package:aula/constants.dart';
-import 'package:aula/pages/calculadora_page.dart';
+import 'package:calculadora_imc/constants.dart';
+import 'package:calculadora_imc/pages/calculadora_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,8 +16,9 @@ class CalculadoraIMC extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         primaryColor: kBackgroundColor,
         scaffoldBackgroundColor: kBackgroundColor,
-        appBarTheme: const AppBarTheme()
-            .copyWith(backgroundColor: kBackgroundColor, centerTitle: true),
+        appBarTheme: AppBarTheme().copyWith(
+          backgroundColor: kBackgroundColor,
+        ),
       ),
       home: CalculadoraPage(),
     );
