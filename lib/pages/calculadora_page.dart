@@ -1,10 +1,10 @@
-import 'package:calculadora_imc/calculadora.dart';
-import 'package:calculadora_imc/components/bottom_button.dart';
-import 'package:calculadora_imc/components/custom_card.dart';
-import 'package:calculadora_imc/components/icon_content.dart';
-import 'package:calculadora_imc/components/modal_result.dart';
-import 'package:calculadora_imc/components/roundicon_button.dart';
-import 'package:calculadora_imc/constants.dart';
+import 'package:IMC/calculadora.dart';
+import 'package:IMC/components/bottom_button.dart';
+import 'package:IMC/components/custom_card.dart';
+import 'package:IMC/components/icon_content.dart';
+import 'package:IMC/components/modal_result.dart';
+import 'package:IMC/components/roundicon_button.dart';
+import 'package:IMC/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../components/slider_altura.dart';

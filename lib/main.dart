@@ -1,5 +1,5 @@
-import 'package:calculadora_imc/constants.dart';
-import 'package:calculadora_imc/pages/calculadora_page.dart';
+import 'package:IMC/constants.dart';
+import 'package:IMC/pages/calculadora_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {

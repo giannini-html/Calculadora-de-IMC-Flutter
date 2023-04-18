@@ -1,6 +1,6 @@
 {
-    "name": "calculadora_imc",
-    "short_name": "calculadora_imc",
+    "name": "Calculadora IMC",
+    "short_name": "IMC",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
